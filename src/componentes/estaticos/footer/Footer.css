@@ -1,0 +1,26 @@
+:root{
+    --Crimson: #DC143C;
+    --MediumVioletRed: #C71585;
+    --LighPink: #FFB6C1;
+    --MistyRose: #FFE4E1;
+}
+
+.box {
+    background-color: var(--LighPink);
+    height: 100px;
+}
+
+.iconGit {
+    font-size: 40px !important;
+    color: var(--MediumVioletRed);
+}
+
+.iconLinked {
+    font-size: 45px !important; 
+    color: var(--MediumVioletRed);
+}
+
+.textoFooter {
+    color: var(--MediumVioletRed);
+    font-size: 17px;
+}

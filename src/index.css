@@ -1,7 +1,8 @@
 :root{
-    --color-Crimson: #DC143C;
-    --color-MediumVioletRed: #C71585;
-    --color-LighPink: #FFB6C1;
+    --Crimson: #DC143C;
+    --MediumVioletRed: #C71585;
+    --LighPink: #FFB6C1;
+    --MistyRose: #FFE4E1;
 }
 
 * {

@@ -2,7 +2,6 @@ import React from "react"
 import { Typography, Grid, Button } from "@material-ui/core"
 import { Box } from "@mui/material"
 import "./Home.css"
-import "/Front/blogPessoalFront/blogPessoalFront/src/index.css"
 
 function Home() {
   return (
@@ -12,7 +11,7 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        style={{ backgroundColor: "var(--color-Crimson)" }}
+        className="container"
       >
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
@@ -22,7 +21,7 @@ function Home() {
               color="textPrimary"
               component="h3"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className="texto"
             >
               Alô?! É os anos 2000, ele quer o estilo dele de volta!
             </Typography>
@@ -32,7 +31,7 @@ function Home() {
               color="textPrimary"
               component="h5"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className="texto"
             >
               Vamos falar sobre Divas Pop, Disney e Nepo Babys!
             </Typography>
@@ -41,11 +40,7 @@ function Home() {
             <Box marginRight={1}></Box>
             <Button
               variant="outlined"
-              style={{
-                borderColor: "white",
-                backgroundColor: "var(--color-MediumVioletRed)",
-                color: "white",
-              }}
+              className="buttonHome"
             >
               Ver Postagens
             </Button>
@@ -58,7 +53,7 @@ function Home() {
             className="fotoHome"
             />
         </Grid>
-        <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+        <Grid xs={12} className="postagens"></Grid>
       </Grid>
     </>
   );

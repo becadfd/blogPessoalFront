@@ -3,6 +3,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import { Typography, Grid } from '@material-ui/core'
 import { Box } from '@mui/material'
+import './Footer.css'
 
 
 function Footer() {
@@ -14,7 +15,7 @@ function Footer() {
         justifyContent="center"
         alignItems="center"
       >
-        <Box display={'flex'} alignItems="center" style={{ backgroundColor: 'var(--color-LighPink)', height: '100px' }} width={'100%'} justifyContent={'space-around'}>
+        <Box display={'flex'} alignItems="center" width={'100%'} justifyContent={'space-around'} className='box'>
           <Box >
             <Box
               paddingTop={1}
@@ -26,7 +27,7 @@ function Footer() {
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: 'var(--color-MediumVioletRed)', fontSize: 17 }}
+                className='textoFooter'
               >
                 Faça parte das minhas comunidades nesse orkut que é a internet{' '}
               </Typography>
@@ -36,13 +37,13 @@ function Footer() {
                 href="https://github.com/becadfd"
                 target="_blank"
               >
-                <GitHubIcon style={{ fontSize: 40, color: 'var(--color-MediumVioletRed)' }} />
+                <GitHubIcon className='iconGit'/>
               </a>
               <a
                 href="https://www.linkedin.com/in/rebeca-de-freitas-damas-173305269/"
                 target="_blank"
               >
-                <LinkedInIcon style={{ fontSize: 45, color: 'var(--color-MediumVioletRed)' }} />
+                <LinkedInIcon className='iconLinked' />
               </a>
             </Box>
           </Box>
@@ -52,7 +53,7 @@ function Footer() {
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: 'var(--color-MediumVioletRed)', fontSize: 17 }}
+                className='textoFooter'
                 component={'span'}
               >
                 © 2023 Copyright: Rebeca Damas {' '}
