@@ -1,0 +1,38 @@
+:root{
+    --Crimson: #DC143C;
+    --MediumVioletRed: #C71585;
+    --LighPink: #FFB6C1;
+    --MistyRose: #FFE4E1;
+}
+
+.imgCadastro {
+    background-image: url('https://i.pinimg.com/564x/bc/9e/5b/bc9e5b38c49ed58fcb8483133d1b4e9c.jpg');
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.textoCadastro{
+    font-weight: bold !important;
+}
+
+.buttonCancelar{
+    margin-right: 20px !important;
+    color: white !important;
+    background-color: var(--MediumVioletRed) !important;
+}
+
+.buttonCancelar:hover{
+    color: var(--MediumVioletRed)!important;
+    background-color: var(--LighPink) !important;
+}
+
+.buttonCadastrar{
+    color: white !important;
+    background-color: var(--MediumVioletRed) !important;
+}
+
+.buttonCadastrar:hover{
+    color: var(--MediumVioletRed)!important;
+    background-color: var(--LighPink) !important;
+}

@@ -11,6 +11,7 @@
 
 .textoLogin{
     font-weight: bold !important;
+    color: var(--MediumVioletRed) !important;
 }
 
 .imgLogin{
@@ -21,9 +22,11 @@
 }
 
 .buttonLogar{
+    color: white !important;
     background-color: var(--MediumVioletRed) !important;
 }
 
 .buttonLogar:hover{
+    color: var(--MediumVioletRed)!important;
     background-color: var(--LighPink) !important;
 }
