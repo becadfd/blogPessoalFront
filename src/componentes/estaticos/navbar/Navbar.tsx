@@ -17,27 +17,35 @@ function Navbar() {
       >
         <Toolbar variant="dense">
           <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
-            <Box className="cursor">
+          <Box className="cursor">
               <Typography variant="h5" color="inherit">
                 Blog Pessoal
               </Typography>
             </Box>
+            
             <Box display="flex" justifyContent="start">
-              <Box mx={1} className="cursor">
+            <Link to='/home'>
+            <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   Home
                 </Typography>
               </Box>
-              <Box mx={1} className="cursor">
+            </Link>
+            <Link to='/postagens'>
+            <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   Postagens
                 </Typography>
               </Box>
+            </Link>
+              <Link to='/temas'>
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   Temas
                 </Typography>
               </Box>
+              </Link>
+              
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   Cadastrar Tema

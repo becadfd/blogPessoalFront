@@ -2,6 +2,7 @@ import React from "react"
 import { Typography, Grid, Button } from "@material-ui/core"
 import { Box } from "@mui/material"
 import "./Home.css"
+import TabPostagens from "../../componentes/postagens/tabPostagens/TabPostagens";
 
 function Home() {
   return (
@@ -11,7 +12,7 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className="container"
+        style={{backgroundColor: 'crimson'}}
       >
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
@@ -53,7 +54,10 @@ function Home() {
             className="fotoHome"
             />
         </Grid>
-        <Grid xs={12} className="postagens"></Grid>
+        <Grid xs={12} style={{backgroundColor: 'white'}}>
+        <TabPostagens />
+        </Grid>
+        
       </Grid>
     </>
   );

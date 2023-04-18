@@ -69,6 +69,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                     <form onSubmit={onSubmit}>                        
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textoCadastro'>Cadastrar</Typography>
                         <TextField 
+                        required
                         value={cadastro.nome}
                         onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                         variant='outlined' 
@@ -77,6 +78,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         margin='normal' 
                         fullWidth />
                         <TextField 
+                        required
                         value={cadastro.usuario}
                         onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                         variant='outlined' 
@@ -85,6 +87,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         margin='normal'
                         fullWidth/>
                          <TextField 
+                         required
                          value={cadastro.senha}
                          onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                         variant='outlined' 
@@ -94,6 +97,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         margin='normal' 
                         fullWidth />
                         <TextField 
+                        required
                         value={confirmarSenha}
                         onChange={(event: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(event)}
                         variant='outlined' 

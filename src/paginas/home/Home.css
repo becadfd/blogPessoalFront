@@ -15,18 +15,24 @@
 }
 
 .buttonHome{
-  border-color: white !important;
+  border-color: var(--LighPink) !important;
   background-color: var(--MediumVioletRed) !important;
-  color: white !important;
+  color: var(--LighPink) !important;
+}
+
+.buttonHome:hover{
+  border-color: var(--MediumVioletRed) !important;
+  color:var(--MediumVioletRed) !important;
+  background-color: var(--LighPink) !important;
 }
 
 .fotoHome{
-    width: max(350px, 65%);
+  width: max(350px, 65%);
   margin: 0 auto;
   display: block;
   transform: rotateY(180deg);
 }
 
 .postagens {
-  background-color: white;
+  background-color: white !important;
 }

@@ -54,6 +54,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {event.preventDefau
                     <form onSubmit={onSubmit}>                        
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textoLogin'>Entrar</Typography>
                         <TextField 
+                        required
                         variant='outlined' 
                         label='Usuário' 
                         name='usuario' 
@@ -62,6 +63,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {event.preventDefau
                         margin='normal' 
                         fullWidth />
                         <TextField 
+                        required
                         variant='outlined' 
                         label='Senha' 
                         name='senha'
