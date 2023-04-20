@@ -7,7 +7,7 @@ import Login from "./paginas/login/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CadastrarUsuario from "./paginas/cadastro/CadastrarUsuario";
 import ListaTemas from "./componentes/temas/listaTemas/ListaTemas";
-import ListaPostagens from "./componentes/postagens/listaPostagens/ListaPostagens";
+import ListaPostagens from "./componentes/postagens/listaPostagens/ListaPostagem";
 import CadastroTemas from "./componentes/temas/cadastroTemas/CadastroTemas";
 
 function App() {
