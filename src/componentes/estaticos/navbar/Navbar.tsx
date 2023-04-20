@@ -3,9 +3,20 @@ import { Toolbar, AppBar, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "/Front/blogPessoalFront/blogPessoalFront/src/index.css";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
+
+  const [token, setToken] = useLocalStorage('token')
+  const history = useNavigate()
+
+  function goLogout(){
+    setToken('')
+    alert('Usuário deslogado')
+    history('/login')
+  }
+
   return (
     <>
       <AppBar
@@ -45,19 +56,19 @@ function Navbar() {
                 </Typography>
               </Box>
               </Link>
-              
+              <Link to='/cadastro-temas'>
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   Cadastrar Tema
                 </Typography>
               </Box>
-              <Link to='/login'>
+              </Link>
+              
                 <Box mx={1} className="cursor">
-                  <Typography variant="h6" color="inherit">
+                  <Typography variant="h6" color="inherit" onClick={goLogout}>
                     Logout
                   </Typography>
                 </Box>
-              </Link>
             </Box>
           </Box>
         </Toolbar>

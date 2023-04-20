@@ -4,7 +4,7 @@ import { Button, Divider, Grid, TextField, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom'
 import Cadastro from '../../models/Cadastro'
-import { cadastroUsuario } from '../../service/Service';
+import { cadastrarUsuario } from '../../service/Service'
 
 function CadastrarUsuario() {
 
@@ -52,7 +52,7 @@ function updatedModel(event: ChangeEvent<HTMLInputElement>) {
 async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
   event.preventDefault()
   if(confirmarSenha == cadastro.senha){
-  cadastroUsuario('/usuarios/cadastrar', cadastro, setCadastroResult)
+  cadastrarUsuario('/usuarios/cadastrar', cadastro, setCadastroResult)
   alert('Usuario cadastrado com sucesso')
   }else{
       alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
@@ -108,7 +108,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         fullWidth/>
                         <Divider />
                         <Box marginTop={2} textAlign='center'>
-                            <Link to ='/login'>
+                        <Link to ='/login'>
                         <Button variant='contained' className='buttonCancelar'>Cancelar</Button>
                         </Link>
                         <Button type='submit' variant='contained' className='buttonCadastrar'>Candastrar</Button>
