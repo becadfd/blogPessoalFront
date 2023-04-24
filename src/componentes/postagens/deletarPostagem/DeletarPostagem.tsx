@@ -3,14 +3,14 @@ import { Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { Postagens } from '../../../models/Postagens';
+import { Postagem } from '../../../models/Postagem';
 import { deleteId, getById } from '../../../service/Service';
 
 function DeletarPostagem() {
 
   const [token, setToken] = useLocalStorage('token');
   const history = useNavigate();
-  const [postagem, setPostagem] = useState<Postagens>()
+  const [postagem, setPostagem] = useState<Postagem>()
   const { id } = useParams<{id: string }>();
 
   useEffect(() => {

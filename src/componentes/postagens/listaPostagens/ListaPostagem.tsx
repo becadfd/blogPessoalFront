@@ -1,14 +1,14 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import './ListaPostagem.css'
 import React, { useEffect, useState } from 'react'
-import { Postagens } from '../../../models/Postagens'
+import { Postagem } from '../../../models/Postagem'
 import useLocalStorage from 'react-use-localstorage'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAll } from '../../../service/Service'
 
 function ListaPostagem() {
   
-  const [postagens, setPostagens] = useState<Postagens[]>([])
+  const [postagens, setPostagens] = useState<Postagem[]>([])
   const [token, setToken] = useLocalStorage('token')
   const history = useNavigate()
 

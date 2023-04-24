@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
-import { Postagens } from '../../../models/Postagens';
 import { Temas } from "../../../models/Temas";
 import { getAll, getById, post, put } from "../../../service/Service";
 import { Button, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
+import { Postagem } from "../../../models/Postagem";
 
 function CadastroPostagem() {
 
@@ -21,7 +21,7 @@ function CadastroPostagem() {
       }
     )
 
-    const [postagem, setPostagem] = useState<Postagens> (
+    const [postagem, setPostagem] = useState<Postagem> (
       {
         id: 0,
         titulo: '',

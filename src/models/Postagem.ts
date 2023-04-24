@@ -1,6 +1,6 @@
 import { Temas } from "./Temas";
 
-export interface Postagens {
+export interface Postagem {
   id: number;
   titulo: string;
   texto: string;
