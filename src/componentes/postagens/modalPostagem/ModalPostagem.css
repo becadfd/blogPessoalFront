@@ -1,0 +1,17 @@
+:root{
+    --Crimson: #DC143C;
+    --MediumVioletRed: #C71585;
+    --LighPink: #FFB6C1;
+    --MistyRose: #FFE4E1;
+  }
+  
+
+.cursor{
+    cursor: pointer;
+}
+
+.btnModal{
+    border-color: var(--LighPink) !important;
+    background-color: var(--MediumVioletRed) !important;
+    color: var(--LighPink) !important;
+}
