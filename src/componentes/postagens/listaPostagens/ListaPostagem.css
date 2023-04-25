@@ -5,6 +5,10 @@
     --MistyRose: #FFE4E1;
   }
 
+  .fundo {
+    background-color: var(--Crimson) !important;
+  }
+
   .buttonPostagem{
     border-color: var(--MistyRose) !important;
     background-color: var(--MediumVioletRed) !important;

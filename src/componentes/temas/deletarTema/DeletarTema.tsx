@@ -5,10 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { Temas } from '../../../models/Temas';
 import { deleteId, getById } from '../../../service/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/token/tokenReducer';
 
 function DeletarTema() {
 
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+)
   const history = useNavigate();
   const [tema, setTema] = useState<Temas>()
   const { id } = useParams<{id: string }>();

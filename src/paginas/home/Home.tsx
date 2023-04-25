@@ -10,14 +10,6 @@ import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostag
 function Home() {
 
   const history = useNavigate()
-  const [token, setToken] = useLocalStorage('token')
-
-  useEffect(() => {
-    if (token === '') {
-      alert('Efetue o Login');
-      history('/login');
-    }
-  }, [token]);
 
   return (
     <>
@@ -26,7 +18,7 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        style={{backgroundColor: 'crimson'}}
+        style={{backgroundColor: '#C71585'}}
       >
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
@@ -53,7 +45,7 @@ function Home() {
           </Box>
           <Box display="flex" justifyContent="center">
               <Box marginRight={1}>
-              <ModalPostagem />
+              <ModalPostagem/>
               </Box>
               <Link to='/postagens'>
               <Button
@@ -67,14 +59,9 @@ function Home() {
             </Box>
             
         </Grid>
-        <Grid item xs={6}>
-          <img
-            src="https://i.pinimg.com/564x/15/6c/02/156c020f3869a057154aa536a9f80f8d.jpg"
-            alt=""
-            className="fotoHome"
-            />
+        <Grid item xs={6} className="fotoHome">
         </Grid>
-        <Grid xs={12} style={{backgroundColor: 'white'}}>
+        <Grid xs={12} style={{backgroundColor: '#fff3f4'}}>
         <TabPostagens />
         </Grid>
         

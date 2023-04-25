@@ -9,13 +9,17 @@ import {
 import "./ListaTemas.css";
 import React, { useEffect, useState } from "react";
 import { Temas } from "../../../models/Temas";
-import useLocalStorage from "react-use-localstorage";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAll } from "../../../service/Service";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/token/tokenReducer";
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Temas[]>([]);
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+)
+
   const history = useNavigate();
 
   async function getAllTemas() {

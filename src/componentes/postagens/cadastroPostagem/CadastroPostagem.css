@@ -1,3 +1,44 @@
-.textoCP{
-    margin-top: 20px;
+:root{
+    --Crimson: #DC143C;
+    --MediumVioletRed: #C71585;
+    --LighPink: #FFB6C1;
+    --MistyRose: #FFE4E1;
+    
+  }
+
+.tituloCP{
+    padding: 2vh;
+    background-color: #fff3f4 !important;
+    justify-content: center;
+}
+
+.textoCP {
+    color: var(--Crimson);
+    padding-bottom: 5vh;
+}
+
+.formulario{
+    display: flex !important;
+    align-content: center !important;
+}
+
+.buttonCP {
+    border-color: var(--MistyRose) !important;
+    background-color: var(--MediumVioletRed) !important;
+    color: none !important;
+}
+
+.buttonCP:hover{
+    border-color: var(--MediumVioletRed) !important;
+    color:var(--MediumVioletRed) !important;
+    background-color: var(--LighPink) !important;
+  }
+
+  .imgCP {
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    min-height: 70vh;
+    background-repeat: no-repeat;
+    background-color: #fff3f4;
 }

@@ -3,16 +3,22 @@
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #fff3f4;
+  }
+
+  .titulo{
+    color: var(--Crimson) !important;
+    font-weight: bolder !important;
   }
   
   .buttonTabP{
     border-color: var(--MistyRose) !important;
-    background-color: var(--MediumVioletRed) !important;
-    color: var(--MistyRose) !important;
+    background-color: var(--LighPink) !important;
+    color: var(--Crimson) !important;
   }
 
   .buttonTabP:hover{
-    border-color: var(--MediumVioletRed) !important;
-    color:var(--MediumVioletRed) !important;
-    background-color: var(--LighPink) !important;
+    border-color: var(--Crimson) !important;
+    color: var(--MediumVioletRed) !important;
+    background-color: var(--MistyRose) !important;
   }

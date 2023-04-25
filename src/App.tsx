@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "./paginas/home/Home";
-import Navbar from "./componentes/estaticos/navbar/Navbar";
 import Footer from "./componentes/estaticos/footer/Footer";
 import "./App.css";
 import Login from "./paginas/login/Login";
@@ -12,10 +11,13 @@ import CadastroTemas from "./componentes/temas/cadastroTemas/CadastroTemas";
 import CadastroPostagem from "./componentes/postagens/cadastroPostagem/CadastroPostagem";
 import DeletarTema from "./componentes/temas/deletarTema/DeletarTema";
 import DeletarPostagem from "./componentes/postagens/deletarPostagem/DeletarPostagem";
+import Navbar from "./componentes/estaticos/navbar/Navbar";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <BrowserRouter>
         <Navbar />
         <div style={{minHeight: '100vh'}}>
@@ -36,7 +38,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    </>
+    </Provider>
   );
 }
 

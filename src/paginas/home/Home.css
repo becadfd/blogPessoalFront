@@ -3,6 +3,7 @@
   --MediumVioletRed: #C71585;
   --LighPink: #FFB6C1;
   --MistyRose: #FFE4E1;
+  --Pinksh: #fff3f4;
 }
 
 .container {
@@ -10,26 +11,27 @@
 }
 
 .texto {
-  color: white !important;
+  color: var(--Pinksh) !important;
   font-weight: "bold" !important;
 }
 
 .buttonHome{
-  border-color: var(--LighPink) !important;
-  background-color: var(--MediumVioletRed) !important;
-  color: var(--LighPink) !important;
+  border-color: var(--Pinksh) !important;
+  background-color: var(--LighPink)!important;
+  color: var(--Crimson) !important;
 }
 
 .buttonHome:hover{
-  border-color: var(--MediumVioletRed) !important;
-  color:var(--MediumVioletRed) !important;
-  background-color: var(--LighPink) !important;
+  border-color: var(--Pinksh) !important;
+  background-color: var(--LighPink)!important;
+  color: var(--Crimson) !important;
 }
 
 .fotoHome{
-  width: max(350px, 65%);
-  margin: 0 auto;
-  display: block;
+  background-image: url('https://i.pinimg.com/564x/7a/e4/20/7ae420c031467f08ca90a8553960ea3a.jpg');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   transform: rotateY(180deg);
 }
 

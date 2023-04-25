@@ -3,9 +3,14 @@
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #fff3f4;
 }
 
 .cursor{
     cursor: pointer;
-    color: var(--MediumVioletRed);
+    color: var(--Crimson);
+}
+
+.text-color{
+    color: var(--Crimson) !important;
 }

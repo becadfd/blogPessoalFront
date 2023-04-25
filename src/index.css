@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 :root{
     --Crimson: #DC143C;
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #fff3f4;
 }
 
 * {
@@ -10,5 +13,9 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Quicksand', sans-serif !important;
   }
 
+body{
+    background-color: var(--Pinksh);
+}

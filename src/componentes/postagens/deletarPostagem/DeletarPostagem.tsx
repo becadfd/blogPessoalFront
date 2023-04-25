@@ -5,10 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { Postagem } from '../../../models/Postagem';
 import { deleteId, getById } from '../../../service/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/token/tokenReducer';
 
 function DeletarPostagem() {
 
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+)
   const history = useNavigate();
   const [postagem, setPostagem] = useState<Postagem>()
   const { id } = useParams<{id: string }>();

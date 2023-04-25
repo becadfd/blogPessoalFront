@@ -3,24 +3,30 @@
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #fff3f4;
 }
 
 .box {
-    background-color: var(--LighPink);
+    background-color: var(--MistyRose);
     height: 100px;
 }
 
 .iconGit {
     font-size: 40px !important;
-    color: var(--MediumVioletRed);
+    color:var(--Crimson);
 }
 
 .iconLinked {
     font-size: 45px !important; 
-    color: var(--MediumVioletRed);
+    color: var(--Crimson);
 }
 
 .textoFooter {
-    color: var(--MediumVioletRed);
+    color: var(--Crimson);
     font-size: 17px;
+}
+
+.logo{
+    height: 60px;
+    width: 80px;
 }

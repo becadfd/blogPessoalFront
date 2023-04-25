@@ -1,15 +1,17 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { Temas } from "../../../models/Temas";
 import { getById, post, put } from "../../../service/Service";
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/token/tokenReducer";
 
 function CadastroTemas() {
   const history = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
-
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+)
   const { id } = useParams<{ id: string }>();
 
   const [tema, setTema] = useState<Temas>({
@@ -86,7 +88,7 @@ useEffect(() => {
           variant='h3'
           gutterBottom
           >
-             {tema.id !== 0 ? 'Editar tema' : 'Cadastrar tema'}
+            {tema.id !== 0 ? 'Editar tema' : 'Cadastrar tema'}
           </Typography>
           <form onSubmit={onSubmit}>
             <Box display='flex' flexDirection='column' gap={2}>

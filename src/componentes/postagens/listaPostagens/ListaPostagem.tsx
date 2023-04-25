@@ -2,14 +2,19 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/ma
 import './ListaPostagem.css'
 import React, { useEffect, useState } from 'react'
 import { Postagem } from '../../../models/Postagem'
-import useLocalStorage from 'react-use-localstorage'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAll } from '../../../service/Service'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/token/tokenReducer'
+import { Grid } from '@material-ui/core'
 
 function ListaPostagem() {
   
+  const token = useSelector<TokenState, TokenState['token']>(
+      (state) => state.token
+  )
+
   const [postagens, setPostagens] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token')
   const history = useNavigate()
 
   async function getAllPostagens() {
@@ -29,7 +34,7 @@ function ListaPostagem() {
       alert('Efetue o login')
       history('/login')
     }
-  }, [])
+  }, [token])
 
   return (
     <>
@@ -54,6 +59,9 @@ function ListaPostagem() {
          <Typography variant="body2" component="p">
            {postagem.tema?.descricao}
          </Typography>
+         <Typography variant="body2" component="p">
+         Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
+         </Typography>
        </CardContent>
        <CardActions>
          <Box display='flex' justifyContent='center' mb={1.5}>
@@ -71,9 +79,9 @@ function ListaPostagem() {
          </Box>
        </CardActions>
      </Card>
-     </Box>     
-    ))}
-   
+     </Box>   
+     
+    ))} 
     </>
   )
 }

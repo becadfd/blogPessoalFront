@@ -1,80 +1,195 @@
-import React from "react";
-import { Toolbar, AppBar, Typography } from "@material-ui/core";
-import { Box } from "@mui/material";
-import "/Front/blogPessoalFront/blogPessoalFront/src/index.css";
-import "./Navbar.css";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import "./Navbar.css"
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/token/tokenReducer';
+import { useState } from 'react';
+import { addToken } from '../../../store/token/action';
+
+const pages = ['Home', 'Postagens', 'Temas', 'Cadastrar Temas'];
+
+const pageslinks = ['/home', '/postagens', '/temas', '/cadastro-temas'];
+
+const settings = [ 'Cadastro', 'Logout'];
+
+
 
 function Navbar() {
-
-  const [token, setToken] = useLocalStorage('token')
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+)
+  const dispatch = useDispatch();
   const history = useNavigate()
 
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   function goLogout(){
-    setToken('')
+    dispatch(addToken(''))
     alert('Usuário deslogado')
-    history('/login')
+    history('/login')   
+  }
+
+  var navbarComponent;
+
+  if(token !== ''){
+    navbarComponent = <AppBar position="static"  style={{backgroundColor:'#FFE4E1', color: '#DC143C'}}>
+    <Container maxWidth="xl">
+      <Toolbar disableGutters>       
+        <img src="/src/assets/img/1-removebg-preview.ico" alt="Logo da marca BMC" style={{width:'70px', padding:'10px'}} />
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          Y2K CALLING
+        </Typography>
+
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+            }}
+          >
+            {pages.map((page) => (
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{page}</Typography>
+
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href=""
+          sx={{
+            mr: 2,
+            display: { xs: 'flex', md: 'none' },
+            flexGrow: 1,
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          Y2K
+        </Typography>
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              <Link to={pageslinks[pages.indexOf(page)]} className='link'>
+                {page}
+              </Link>
+            </Button>
+          ))}
+        </Box>
+
+        <Box sx={{ flexGrow: 0 }}>
+          <Link to={'/login'} className='link'>
+          <Typography className='text-color' onClick={goLogout}>
+          Logout
+          </Typography>
+          </Link>
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Toolbar>
+    </Container>
+  </AppBar>
+    
   }
 
   return (
     <>
-      <AppBar
-        position="static"
-        style={{
-          backgroundColor: "var(--LighPink)",
-          color: "var(--MediumVioletRed)",
-        }}
-      >
-        <Toolbar variant="dense">
-          <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
-          <Box className="cursor">
-              <Typography variant="h5" color="inherit">
-                Blog Pessoal
-              </Typography>
-            </Box>
-            
-            <Box display="flex" justifyContent="start">
-            <Link to='/home'>
-            <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  Home
-                </Typography>
-              </Box>
-            </Link>
-            <Link to='/postagens'>
-            <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  Postagens
-                </Typography>
-              </Box>
-            </Link>
-              <Link to='/temas'>
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  Temas
-                </Typography>
-              </Box>
-              </Link>
-              <Link to='/cadastro-temas'>
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  Cadastrar Tema
-                </Typography>
-              </Box>
-              </Link>
-              
-                <Box mx={1} className="cursor">
-                  <Typography variant="h6" color="inherit" onClick={goLogout}>
-                    Logout
-                  </Typography>
-                </Box>
-            </Box>
-          </Box>
-        </Toolbar>
-      </AppBar>
+       {navbarComponent}
     </>
-  );
-}
+ 
+    )}
 
 export default Navbar;

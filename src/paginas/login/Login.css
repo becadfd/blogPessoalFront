@@ -3,30 +3,39 @@
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #fff3f4;
 }
 
 .background {
-    background-color: var(--MistyRose);
+    background-color: var(--Pinksh);
 }
 
 .textoLogin{
-    font-weight: bold !important;
+    color: var(--Crimson) !important;
+}
+
+.textoCadastrar{
+    color: var(--Crimson) !important;
+    font-weight: bolder !important;
+}
+
+.textoCadastrar:hover{
     color: var(--MediumVioletRed) !important;
 }
 
 .imgLogin{
-   background-image: url('https://i.pinimg.com/564x/bc/9e/5b/bc9e5b38c49ed58fcb8483133d1b4e9c.jpg');
+    background-image: url('/src/assets/img/1.png');
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: 20%;
 }
 
 .buttonLogar{
-    color: white !important;
-    background-color: var(--MediumVioletRed) !important;
+    background-color: var(--Crimson)!important;
+    color: var(--LighPink) !important;
 }
 
 .buttonLogar:hover{
-    color: var(--MediumVioletRed)!important;
-    background-color: var(--LighPink) !important;
+    background-color: var(--LighPink)!important;
+    color: var(--MediumVioletRed) !important;
 }

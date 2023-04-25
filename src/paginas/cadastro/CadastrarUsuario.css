@@ -3,36 +3,42 @@
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #FFF3F4;
+}
+
+.background {
+    background-color: var(--Pinksh);
 }
 
 .imgCadastro {
-    background-image: url('https://i.pinimg.com/564x/bc/9e/5b/bc9e5b38c49ed58fcb8483133d1b4e9c.jpg');
+    background-image: url('https://i.pinimg.com/736x/3d/da/9c/3dda9cb8b85f29c32480b80066d59352.jpg');
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .textoCadastro{
-    font-weight: bold !important;
+    font-weight:bold !important;
+    color: var(--Crimson) !important;
 }
 
 .buttonCancelar{
-    margin-right: 20px !important;
-    color: white !important;
-    background-color: var(--MediumVioletRed) !important;
+    margin-right: 1rem !important;
+    background-color: var(--Crimson)!important;
+    color: var(--LighPink) !important;
 }
 
 .buttonCancelar:hover{
-    color: var(--MediumVioletRed)!important;
-    background-color: var(--LighPink) !important;
+    background-color: var(--LighPink)!important;
+    color: var(--MediumVioletRed) !important;
 }
 
 .buttonCadastrar{
-    color: white !important;
-    background-color: var(--MediumVioletRed) !important;
+    background-color: var(--Crimson)!important;
+    color: var(--LighPink) !important;
 }
 
 .buttonCadastrar:hover{
-    color: var(--MediumVioletRed)!important;
-    background-color: var(--LighPink) !important;
+    background-color: var(--LighPink)!important;
+    color: var(--MediumVioletRed) !important;;
 }

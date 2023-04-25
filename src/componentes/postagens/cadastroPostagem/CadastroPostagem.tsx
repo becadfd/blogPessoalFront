@@ -1,18 +1,21 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { Temas } from "../../../models/Temas";
 import { getAll, getById, post, put } from "../../../service/Service";
 import { Button, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
-import { Box } from "@mui/material";
 import { Postagem } from "../../../models/Postagem";
+import './CadastroPostagem.css'
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/token/tokenReducer";
 
 function CadastroPostagem() {
 
     const history = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Temas[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState['token']>(
+      (state) => state.token
+  )
 
     const [tema, setTema] = useState<Temas> (
       {
@@ -110,14 +113,14 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
   return (
     <>
-       <Grid container className='textoCP'>
-        <Box maxWidth='sm'>
-        <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Postagem</Typography>
+       <Grid container>
+        <Grid item xs={12} className='tituloCP'>
+        <form onSubmit={onSubmit} >
+                <Typography variant="h3" component="h1" align="center" className="textoCP">Cadastrar Postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth multiline minRows={4} />
 
-                <FormControl >
+                <FormControl className="formulario">
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
@@ -134,13 +137,12 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" disabled={tema.id === 0} className="buttonCP">
                         Finalizar
                     </Button>
                 </FormControl>
             </form>
-        </Box>
-            
+        </Grid>
         </Grid>
     </>
     )
