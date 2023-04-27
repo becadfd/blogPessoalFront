@@ -13,6 +13,7 @@ import { login } from "../../service/Service";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { useDispatch } from "react-redux";
 import { addId, addToken } from "../../store/token/action";
+import { toast } from 'react-toastify'
 
 function Login() {
   //aqui vem a lógica
@@ -55,9 +56,27 @@ function Login() {
     event.preventDefault();
     try {
       await login("/usuarios/logar", userLogin, setRespUserLogin);
-      alert("Usuário logado com sucesso!");
+      toast.success('Usuário logado com sucesso', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } catch (error) {
-      alert("Usuário ou senha são inválidos!");
+      toast.error('Usuário ou senha inválidos', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
 

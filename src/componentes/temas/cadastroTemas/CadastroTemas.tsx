@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/token/tokenReducer";
 import './CadastroTemas.css'
+import { toast } from 'react-toastify'
 
 function CadastroTemas() {
   const history = useNavigate();
@@ -44,7 +45,16 @@ useEffect(() =>{
 
 useEffect(() => {
   if (token === "") {
-    alert("Efetue o login");
+    toast.info('Efetue o Login', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     history("/login");
   }
 }, [token]);
@@ -60,10 +70,28 @@ useEffect(() => {
             Authorization: token,
           },
         });
-        alert('Tema atualizado com sucesso');
+        toast.success('Tema atualizado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history('/temas')
       } catch (error) {
-        alert('Falha ao atualizar tema');
+        toast.error('Falha ao atualizar tema', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     } else {
       try {
@@ -72,10 +100,28 @@ useEffect(() => {
             Authorization: token,
           },
         });
-        alert('Tema cadastrado com sucesso');
+        toast.success('Tema cadastrado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history('/temas')
       } catch (error) {
-        alert('Falha ao cadastrar tema');
+        toast.error('Falha ao cadastrar tema', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     }
   }

@@ -36,7 +36,16 @@ function ListaTemas() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Efetue o login");
+      toast.info('Efetue o Login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   }, [token]);

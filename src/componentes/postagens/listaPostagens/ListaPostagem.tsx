@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { getAll } from '../../../service/Service'
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/token/tokenReducer'
-import { Grid } from '@material-ui/core'
+import { toast } from 'react-toastify'
 
 function ListaPostagem() {
   
@@ -31,7 +31,16 @@ function ListaPostagem() {
 
   useEffect(() => {
     if(token === '') {
-      alert('Efetue o login')
+      toast.info('Efetue o Login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history('/login')
     }
   }, [token])

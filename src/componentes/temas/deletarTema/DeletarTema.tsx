@@ -2,11 +2,11 @@ import { Button, Grid, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { Temas } from '../../../models/Temas';
 import { deleteId, getById } from '../../../service/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/token/tokenReducer';
+import { toast } from 'react-toastify'
 
 function DeletarTema() {
 
@@ -19,7 +19,16 @@ function DeletarTema() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Efetue o login");
+      toast.info('Efetue o Login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   }, [token]);
@@ -44,7 +53,16 @@ function DeletarTema() {
           }
         })
         history('/temas')
-        alert('Tema deletado com sucesso')
+        toast.success('Tema deletado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
     }
 
   function nao() {

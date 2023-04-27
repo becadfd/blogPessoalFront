@@ -18,6 +18,7 @@ import "./CadastroPostagem.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/token/tokenReducer";
 import { Usuario } from '../../../models/Usuario';
+import {toast} from 'react-toastify'
 
 function CadastroPostagem() {
   const history = useNavigate();
@@ -54,7 +55,16 @@ function CadastroPostagem() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Efetue o login");
+      toast.info('Efetue o Login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   }, [token]);
@@ -108,10 +118,28 @@ function CadastroPostagem() {
             Authorization: token,
           },
         });
-        alert("Postagem atualizado com sucesso");
+        toast.success('Postagem cadastrada com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history("/postagens");
       } catch (error) {
-        alert("Falha ao atualizar postagem");
+        toast.error('Falha ao cadastrar postagem', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     } else {
       try {
@@ -120,10 +148,28 @@ function CadastroPostagem() {
             Authorization: token,
           },
         });
-        alert("Postagem cadastrado com sucesso");
+        toast.success('Postagem cadastrada com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history("/postagens");
       } catch (error) {
-        alert("Falha ao cadastrar postagem");
+        toast.error('Falha ao cadastrar postagem', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     }
   }

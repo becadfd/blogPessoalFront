@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/token/tokenReducer';
 import { useState } from 'react';
 import { addToken } from '../../../store/token/action';
+import {toast} from 'react-toastify'
 
 const pages = ['Home', 'Postagens', 'Temas', 'Cadastrar Temas', 'Perfil'];
 
@@ -52,7 +53,16 @@ function Navbar() {
 
   function goLogout(){
     dispatch(addToken(''))
-    alert('Usuário deslogado')
+    toast.info('Usuario deslogado', {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: 'colored',
+      progress: undefined,
+    })
     history('/login')   
   }
 
