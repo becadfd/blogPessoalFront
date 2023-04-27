@@ -3,20 +3,45 @@
     --MediumVioletRed: #C71585;
     --LighPink: #FFB6C1;
     --MistyRose: #FFE4E1;
+    --Pinksh: #FFF3F4;
   }
 
-  .fundo {
-    background-color: var(--Crimson) !important;
+  .postTitulo{
+    color: var(--MediumVioletRed);
+    font-weight:600 !important;
+  }
+
+  .postTexto{
+    font-weight: bold !important;
   }
 
   .buttonPostagem{
-    border-color: var(--MistyRose) !important;
-    background-color: var(--MediumVioletRed) !important;
-    color: var(--MistyRose) !important;
+    border-color: var(--Pinksh) !important;
+    background-color: var(--LighPink)!important;
+    color: var(--Crimson) !important;
   }
 
   .buttonPostagem:hover{
-    border-color: var(--MediumVioletRed) !important;
+    border-color: var(--Crimson) !important;
     color:var(--MediumVioletRed) !important;
-    background-color: var(--LighPink) !important;
+    background-color: var(--Pinksh) !important;
   }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite;
+  }
+  
+  @keyframes animloader {
+    0% {
+      box-shadow: -72px 0 #FFF inset;
+    }
+    100% {
+      box-shadow: 48px 0 #FFF inset;
+    }
+  }
+      

@@ -2,3 +2,14 @@
     align-items: center;
     font-weight: bold;
 }
+
+.formTema{
+   display: flex !important;
+   flex-direction: column;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+.imgCT{
+ min-height: 100vh;
+}

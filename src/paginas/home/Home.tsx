@@ -4,12 +4,24 @@ import { Box } from "@mui/material"
 import "./Home.css"
 import TabPostagens from "../../componentes/postagens/tabPostagens/TabPostagens";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/token/tokenReducer";
 
 function Home() {
 
   const history = useNavigate()
+
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  );
+
+  useEffect(() => {
+    if (token == "") {
+      alert("Você precisa estar logado");
+      history("/login");
+    }
+  }, [token]);
 
   return (
     <>

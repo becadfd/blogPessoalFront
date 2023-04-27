@@ -6,6 +6,7 @@ import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/token/tokenReducer";
+import './CadastroTemas.css'
 
 function CadastroTemas() {
   const history = useNavigate();
@@ -82,7 +83,7 @@ useEffect(() => {
   return (
     <>
       <Grid container justifyContent='center'>
-        <Grid item xs={4}>
+        <Grid item xs={4} className="formTema">
           <Typography
           className='textoCadastro'
           variant='h3'
@@ -108,6 +109,9 @@ useEffect(() => {
               </Button>
             </Box>
           </form>
+        </Grid>
+        <Grid>
+          <img src="/src/assets/img/1.png" alt="" className="imgCT"/>
         </Grid>
       </Grid>
     </>

@@ -44,7 +44,7 @@ function ListaTemas() {
   return (
     <>
 
-    {temas.length === 0 && (<h6>Está carregando</h6>)}
+    {temas.length === 0 && (<span className="loader"></span>)}
       {temas.map((tema) => (
         <Box m={4}>
           <Card sx={{ minWidth: 275 }}>

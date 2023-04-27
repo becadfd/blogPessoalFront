@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../service/Service";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/token/action";
+import { addId, addToken } from "../../store/token/action";
 
 function Login() {
   //aqui vem a lógica
@@ -27,6 +27,15 @@ function Login() {
     foto: "",
     token: "",
   });
+
+  const[respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+    token: "",
+  })
 
   function updateModel(event: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
@@ -45,12 +54,20 @@ function Login() {
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
-      await login("/usuarios/logar", userLogin, setToken);
+      await login("/usuarios/logar", userLogin, setRespUserLogin);
       alert("Usuário logado com sucesso!");
     } catch (error) {
       alert("Usuário ou senha são inválidos!");
     }
   }
+
+  useEffect(()=> {
+    if(respUserLogin.token !== '') {
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      history('/home')
+    }
+  }, [respUserLogin])
 
   return (
     <>

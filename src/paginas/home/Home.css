@@ -22,9 +22,9 @@
 }
 
 .buttonHome:hover{
-  border-color: var(--Pinksh) !important;
-  background-color: var(--LighPink)!important;
-  color: var(--Crimson) !important;
+  border-color: var(--Crimson) !important;
+  color:var(--MediumVioletRed) !important;
+  background-color: var(--Pinksh) !important;
 }
 
 .fotoHome{

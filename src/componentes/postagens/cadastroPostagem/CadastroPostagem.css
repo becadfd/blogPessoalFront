@@ -42,3 +42,9 @@
     background-repeat: no-repeat;
     background-color: #fff3f4;
 }
+
+@media(min-width: 45vw) and (max-width: 45vw){
+    .imgCP{
+        display: none;
+    }
+}

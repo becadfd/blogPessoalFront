@@ -86,10 +86,19 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         name='usuario'
                         margin='normal'
                         fullWidth/>
-                         <TextField 
-                         required
-                         value={cadastro.senha}
-                         onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
+                        <TextField 
+                        required
+                        value={cadastro.foto}
+                        onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
+                        variant='outlined' 
+                        label='url da foto' 
+                        name='foto'
+                        margin='normal'
+                        fullWidth/>
+                        <TextField 
+                        required
+                        value={cadastro.senha}
+                        onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                         variant='outlined' 
                         label='senha' 
                         name='senha'

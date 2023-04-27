@@ -38,6 +38,7 @@ function ListaPostagem() {
 
   return (
     <>
+     {postagens.length === 0 && (<span className="loader"></span>)}
     {postagens.map((postagem) => (
      <Box m={2}>
      <Card variant='outlined'
@@ -50,14 +51,17 @@ function ListaPostagem() {
          >
            Postagens
          </Typography>
-         <Typography variant="h5" component="div">
+         <Typography variant="h5" component="div" className='postTitulo'>
            {postagem.titulo}
          </Typography>
-         <Typography variant="body2" component="p">
+         <Typography variant="body2" component="p" className='postTexto'>
           {postagem.texto}
          </Typography>
          <Typography variant="body2" component="p">
            {postagem.tema?.descricao}
+         </Typography>
+         <Typography variant="body2" component="p">
+           Postado por: {postagem.usuario?.nome}
          </Typography>
          <Typography variant="body2" component="p">
          Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}

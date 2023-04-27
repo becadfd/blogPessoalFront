@@ -17,11 +17,11 @@ import { TokenState } from '../../../store/token/tokenReducer';
 import { useState } from 'react';
 import { addToken } from '../../../store/token/action';
 
-const pages = ['Home', 'Postagens', 'Temas', 'Cadastrar Temas'];
+const pages = ['Home', 'Postagens', 'Temas', 'Cadastrar Temas', 'Perfil'];
 
-const pageslinks = ['/home', '/postagens', '/temas', '/cadastro-temas'];
+const pageslinks = ['/home', '/postagens', '/temas', '/cadastro-temas', '/usuarios/:id'];
 
-const settings = [ 'Cadastro', 'Logout'];
+const settings = [ 'Logout'];
 
 
 
@@ -66,8 +66,6 @@ function Navbar() {
         <Typography
           variant="h6"
           noWrap
-          component="a"
-          href="/"
           sx={{
             mr: 2,
             display: { xs: 'none', md: 'flex' },

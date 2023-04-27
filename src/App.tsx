@@ -14,6 +14,7 @@ import DeletarPostagem from "./componentes/postagens/deletarPostagem/DeletarPost
 import Navbar from "./componentes/estaticos/navbar/Navbar";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import Perfil from "./componentes/perfil/Perfil";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/editar-postagem/:id" element={<CadastroPostagem/>}/>
             <Route path='/deletar-tema/:id' element={<DeletarTema/>}/>
             <Route path="/deletar-postagem/:id" element={<DeletarPostagem/>}/>
+            <Route path='/usuarios/:id' element={<Perfil/>}/>
           </Routes>
         </div>
         <Footer />
