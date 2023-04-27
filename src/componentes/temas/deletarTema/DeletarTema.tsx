@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, Grid, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
@@ -71,24 +71,36 @@ function DeletarTema() {
 
   return (
     <>
-      <Grid container justifyContent='center'>
-        <Grid item xs={4}>
-          <Typography>
-            Deletar Tema
-          </Typography>
-          <Typography>
-            Você tem certeza que deseja deletar o tema: {tema?.descricao}
-          </Typography>
+    <Box m={2}>
+      <Card variant="outlined" >
+        <CardContent>
+          <Box justifyContent="center">
+            <Typography color="textSecondary" gutterBottom>
+              Deseja deletar o Tema: {tema?.descricao}
+            </Typography>
+            <Typography color="textSecondary" >
+            Tema
+            </Typography>
+          </Box>
 
-          <Button onClick={deletarTema} variant="contained" className="marginLeft" size='large' color="primary">
-            Sim
-          </Button>
-          <Button onClick={nao} variant="contained" size='large' color="secondary">
-            Não
-          </Button>
-        </Grid>
-      </Grid></>
-  
+        </CardContent>
+        <CardActions>
+          <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
+            <Box mx={2}>
+            <Button onClick={deletarTema} variant="contained" className="marginLeft" size='large' color="primary">
+              Sim
+            </Button>
+            </Box>
+            <Box>
+            <Button onClick={nao}  variant="contained" size='large' color="secondary">
+              Não
+            </Button>
+            </Box>
+          </Box>
+        </CardActions>
+      </Card>
+    </Box>
+  </>
   )
 }
 

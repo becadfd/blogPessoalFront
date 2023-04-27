@@ -150,6 +150,7 @@ useEffect(() => {
               <Button
               type='submit'
               variant='contained'
+              className="buttonTema"
               disabled={tema.descricao.length < 3}>
                 Finalizar
               </Button>

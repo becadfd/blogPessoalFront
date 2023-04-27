@@ -1,3 +1,11 @@
+:root{
+    --Crimson: #DC143C;
+    --MediumVioletRed: #C71585;
+    --LighPink: #FFB6C1;
+    --MistyRose: #FFE4E1;
+    
+  }
+
 .textoCadastro {
     align-items: center;
     font-weight: bold;
@@ -12,4 +20,16 @@
 
 .imgCT{
  min-height: 100vh;
+}
+
+.buttonTema{
+    border-color: var(--MistyRose) !important;
+    background-color: var(--MediumVioletRed) !important;
+    color: none !important;
+}
+
+.buttonTema:hover{
+    border-color: var(--MediumVioletRed) !important;
+    color:var(--MediumVioletRed) !important;
+    background-color: var(--LighPink) !important;
 }
