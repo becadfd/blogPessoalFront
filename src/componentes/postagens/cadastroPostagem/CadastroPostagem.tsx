@@ -246,9 +246,9 @@ function CadastroPostagem() {
           </form>
         </Grid>
       </Grid>
-      <Grid>
+      {/* <Grid>
           <img src="/src/assets/img/1.png" alt="" className="imgCP"/>
-        </Grid>
+        </Grid> */}
     </>
   );
 }
