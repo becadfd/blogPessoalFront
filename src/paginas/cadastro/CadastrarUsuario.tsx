@@ -139,7 +139,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         <Link to ='/login'>
                         <Button variant='contained' className='buttonCancelar'>Cancelar</Button>
                         </Link>
-                        <Button type='submit' variant='contained' className='buttonCadastrar'>Candastrar</Button>
+                        <Button type='submit' variant='contained' className='buttonCadastrar'>Cadastrar</Button>
                         </Box>
                     </form>
                     </Box>
