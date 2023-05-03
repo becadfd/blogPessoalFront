@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/token/tokenReducer";
 import { Usuario } from '../../../models/Usuario';
 import {toast} from 'react-toastify'
+import { Box } from "@mui/material";
 
 function CadastroPostagem() {
   const history = useNavigate();
@@ -176,23 +177,22 @@ function CadastroPostagem() {
 
   return (
     <>
-      <Grid container>
-        <Grid item xs={12} className="tituloCP">
+      <Grid container justifyContent='center'>
+        <Grid item xs={4} className="formCP">
         <Typography
               variant="h3"
-              component="h1"
-              align="center"
+              gutterBottom
               className="textoCP"
             >
               {postagem.id !== 0 ? "Editar postagem" : "Cadastrar postagem"}
             </Typography>
           <form onSubmit={onSubmit}>
+            <Box display='flex' flexDirection='column' gap={2}>
             <TextField
               value={postagem.titulo}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 updateModel(event)
               }
-              id="titulo"
               label="titulo"
               variant="outlined"
               name="titulo"
@@ -204,7 +204,6 @@ function CadastroPostagem() {
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 updateModel(event)
               }
-              id="texto"
               label="texto"
               name="texto"
               variant="outlined"
@@ -243,9 +242,13 @@ function CadastroPostagem() {
                 Finalizar
               </Button>
             </FormControl>
+            </Box>
           </form>
         </Grid>
       </Grid>
+      <Grid>
+          <img src="/src/assets/img/1.png" alt="" className="imgCP"/>
+        </Grid>
     </>
   );
 }

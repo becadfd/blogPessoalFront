@@ -6,13 +6,22 @@
     
   }
 
-.tituloCP{
+.formCP{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* .tituloCP{
     padding: 2vh;
     background-color: #fff3f4 !important;
     justify-content: center;
-}
+} */
 
 .textoCP {
+    align-items: center;
+    font-weight: bold;
     color: var(--Crimson);
     padding-bottom: 5vh;
 }
@@ -43,8 +52,8 @@
     background-color: #fff3f4;
 }
 
-@media(min-width: 45vw) and (max-width: 45vw){
+@media screen and (max-width: 480px){
     .imgCP{
-        display: none;
+        display: hidden !important;
     }
 }

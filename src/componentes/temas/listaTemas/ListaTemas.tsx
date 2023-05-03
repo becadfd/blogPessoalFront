@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAll } from "../../../service/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/token/tokenReducer";
+import {toast} from 'react-toastify'
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Temas[]>([]);
