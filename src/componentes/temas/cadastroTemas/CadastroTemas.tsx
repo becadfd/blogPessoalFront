@@ -158,7 +158,7 @@ useEffect(() => {
           </form>
         </Grid>
         <Grid>
-          <img src="/src/assets/img/1.png" alt="" className="imgCT"/>
+          <img src="https://i.imgur.com/y6ZqAMh.png" alt="" className="imgCT"/>
         </Grid>
       </Grid>
     </>
