@@ -60,7 +60,7 @@ function Perfil() {
                     </Typography>
             </Grid>
                 <Grid xs={3}>
-                    <img src="/src/assets/img/coração.png" alt="" style={{width: '90%'}}/>
+                    <img src="https://i.imgur.com/DLMpxl2.png" alt="" style={{width: '90%'}}/>
                 </Grid>
             </Grid>
     </Container>
