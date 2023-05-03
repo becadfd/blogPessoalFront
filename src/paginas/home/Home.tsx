@@ -40,9 +40,10 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className="containerHome"
         style={{backgroundColor: '#C71585'}}
       >
-        <Grid alignItems="center" item xs={6}>
+        <Grid alignItems="center" item xs={6} className="faceHome">
           <Box paddingX={20}>
             <Typography
               variant="h3"
@@ -65,7 +66,7 @@ function Home() {
               Vamos falar sobre Divas Pop, Disney e Nepo Babys!
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="center" className="bttnHome">
               <Box marginRight={1}>
               <ModalPostagem/>
               </Box>

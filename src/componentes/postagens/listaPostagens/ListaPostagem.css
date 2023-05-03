@@ -1,47 +1,67 @@
-:root{
-    --Crimson: #DC143C;
-    --MediumVioletRed: #C71585;
-    --LighPink: #FFB6C1;
-    --MistyRose: #FFE4E1;
-    --Pinksh: #FFF3F4;
-  }
+:root {
+  --Crimson: #dc143c;
+  --MediumVioletRed: #c71585;
+  --LighPink: #ffb6c1;
+  --MistyRose: #ffe4e1;
+  --Pinksh: #fff3f4;
+}
 
-  .postTitulo{
-    color: var(--MediumVioletRed);
-    font-weight:600 !important;
-  }
+.gridCard {
+  display: flex;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+}
 
-  .postTexto{
-    font-weight: bold !important;
-  }
+.tmCards{
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align:start;
 
-  .buttonPostagem{
-    border-color: var(--Pinksh) !important;
-    background-color: var(--LighPink)!important;
-    color: var(--Crimson) !important;
-  }
+}
 
-  .buttonPostagem:hover{
-    border-color: var(--Crimson) !important;
-    color:var(--MediumVioletRed) !important;
-    background-color: var(--Pinksh) !important;
-  }
+.postTitulo {
+  color: var(--MediumVioletRed);
+  font-weight: 600 !important;
+}
 
-  .loader {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: animloader 1s linear infinite;
+.postTexto {
+  font-weight: bold !important;
+}
+
+.buttonPostagem {
+  border-color: var(--Pinksh) !important;
+  background-color: var(--LighPink) !important;
+  color: var(--Crimson) !important;
+}
+
+.bttnPostagem{
+  display: flex;
+  justify-content: center;
+}
+
+.buttonPostagem:hover {
+  border-color: var(--Crimson) !important;
+  color: var(--MediumVioletRed) !important;
+  background-color: var(--Pinksh) !important;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: -72px 0 #fff inset;
   }
-  
-  @keyframes animloader {
-    0% {
-      box-shadow: -72px 0 #FFF inset;
-    }
-    100% {
-      box-shadow: 48px 0 #FFF inset;
-    }
+  100% {
+    box-shadow: 48px 0 #fff inset;
   }
-      
+}

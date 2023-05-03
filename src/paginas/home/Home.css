@@ -6,8 +6,13 @@
   --Pinksh: #fff3f4;
 }
 
-.container {
-  background-color: var(--Crimson);
+.containerHome{
+  overflow-x: hidden;
+}
+.faceHome{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .texto {
@@ -33,6 +38,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 350px) and (max-width: 1000px){
+  .fotoHome{
+  min-width: 70vh;
+  min-height: 70vh;
+}
+}
+
+.bttnHome{
+  padding: 2rem;
+  min-width: 75vh;
 }
 
 .postagens {
