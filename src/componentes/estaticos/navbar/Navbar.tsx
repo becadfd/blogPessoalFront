@@ -72,7 +72,7 @@ function Navbar() {
     navbarComponent = <AppBar position="static"  style={{backgroundColor:'#FFE4E1', color: '#DC143C'}}>
     <Container maxWidth="xl">
       <Toolbar disableGutters>       
-        <img src="/src/assets/img/1-removebg-preview.ico" alt="Logo da marca BMC" style={{width:'70px', padding:'10px'}} />
+        <img src="https://i.imgur.com/TsNK3uQ.png" alt="Logo do Blog" style={{width:'70px', padding:'10px'}} />
         <Typography
           variant="h6"
           noWrap
