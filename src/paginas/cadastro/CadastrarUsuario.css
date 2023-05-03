@@ -6,8 +6,9 @@
     --Pinksh: #FFF3F4;
 }
 
-.background {
+.backgroundCadastro {
     background-color: var(--Pinksh);
+    overflow-x: hidden;
 }
 
 .imgCadastro {
@@ -17,9 +18,34 @@
     background-size: cover;
 }
 
+@media screen and (min-width: 350px) and (max-width: 480px){
+    .imgCadastro{
+        min-height: 45vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-width: 60vh;
+    }
+}
+
+.formularioCadastr{
+    min-height: 100vh;
+}
+
+@media screen and (min-width: 350px) and (max-width: 480px){
+    .formularioCadastro{
+        min-width: 75vh;
+    }
+}
+
+
 .textoCadastro{
     font-weight:bold !important;
     color: var(--Crimson) !important;
+}
+
+.bttnCadastro{
+    display: flex;
+    justify-content: center;
 }
 
 .buttonCancelar{

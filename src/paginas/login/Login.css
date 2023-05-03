@@ -6,8 +6,17 @@
     --Pinksh: #fff3f4;
 }
 
-.background {
+.backgroundLogin{
     background-color: var(--Pinksh);
+    overflow-x: hidden;
+}
+
+.formularioLogin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 70vh;
+    padding-block: 3rem;
 }
 
 .textoLogin{
@@ -30,6 +39,12 @@
     background-size: 20%;
 }
 
+@media screen and (min-width: 350px) and (max-width: 480px){
+    .imgLogin{
+        min-height: 0vh;
+    }
+}
+
 .buttonLogar{
     background-color: var(--Crimson)!important;
     color: var(--LighPink) !important;
@@ -39,3 +54,14 @@
     background-color: var(--LighPink)!important;
     color: var(--MediumVioletRed) !important;
 }
+
+.textoC{
+    display: flex;
+}
+
+@media screen and (min-width: 350px) and (max-width: 480px){
+    .textoC{
+        flex-direction: column;
+    }
+}
+

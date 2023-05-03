@@ -94,11 +94,11 @@ function Login() {
         container
         alignItems="center"
         justifyContent="center"
-        className="background"
+        className="backgroundLogin"
       >
-        <Grid xs={6} alignItems="center">
+        <Grid xs={6} alignItems="center" className="formularioLogin">
           <Box paddingX={20}>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} style={{minWidth:"55vh"}}>
               <Typography
                 variant="h3"
                 gutterBottom
@@ -150,7 +150,7 @@ function Login() {
                 </Button>
               </Box>
             </form>
-            <Box display="flex" justifyContent="center" marginTop={2}>
+            <Box display="flex" justifyContent="center" marginTop={2} className="textoC">
               <Box marginRight={1}>
                 <Typography variant="subtitle1" gutterBottom align="center">
                   Ainda não tem uma conta?

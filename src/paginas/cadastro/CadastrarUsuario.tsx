@@ -81,9 +81,9 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
   return (
     <>
-        <Grid container alignItems='center' justifyContent='center' className='background'>
+        <Grid container alignItems='center' justifyContent='center' className='backgroundCadastro'>
             <Grid item xs={6} className='imgCadastro'></Grid>
-            <Grid item xs={6} alignItems='center'>
+            <Grid item xs={6} alignItems='center'className='formularioCadastro'>
             <Box padding={10}>
                     <form onSubmit={onSubmit}>                        
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textoCadastro'>Cadastrar</Typography>
@@ -135,7 +135,7 @@ async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
                         type='password' 
                         fullWidth/>
                         <Divider />
-                        <Box marginTop={2} textAlign='center'>
+                        <Box marginTop={2} textAlign='center' className='bttnCadastro'>
                         <Link to ='/login'>
                         <Button variant='contained' className='buttonCancelar'>Cancelar</Button>
                         </Link>
