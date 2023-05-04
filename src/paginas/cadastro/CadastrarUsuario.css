@@ -18,12 +18,12 @@
     background-size: cover;
 }
 
-@media screen and (min-width: 350px) and (max-width: 480px){
+@media screen and (min-width: 350px) and (max-width: 1000px){
     .imgCadastro{
         min-height: 45vh;
         background-repeat: no-repeat;
         background-size: cover;
-        min-width: 60vh;
+        min-width: 55vh;
     }
 }
 
@@ -33,7 +33,7 @@
 
 @media screen and (min-width: 350px) and (max-width: 480px){
     .formularioCadastro{
-        min-width: 75vh;
+        min-width: 60vh;
     }
 }
 
