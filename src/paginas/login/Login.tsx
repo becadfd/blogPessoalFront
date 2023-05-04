@@ -98,7 +98,7 @@ function Login() {
       >
         <Grid xs={6} alignItems="center" className="formularioLogin">
           <Box paddingX={20}>
-            <form onSubmit={onSubmit} style={{minWidth:"55vh"}}>
+            <form onSubmit={onSubmit}>
               <Typography
                 variant="h3"
                 gutterBottom

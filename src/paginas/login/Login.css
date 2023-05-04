@@ -19,6 +19,7 @@
     padding-block: 3rem;
 }
 
+
 .textoLogin{
     color: var(--Crimson) !important;
 }
@@ -39,7 +40,7 @@
     background-size: 20%;
 }
 
-@media screen and (min-width: 350px) and (max-width: 480px){
+@media screen and (min-width: 350px) and (max-width: 1470px){
     .imgLogin{
         min-height: 0vh;
     }
