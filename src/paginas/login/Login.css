@@ -40,7 +40,7 @@
     background-size: 20%;
 }
 
-@media screen and (min-width: 350px) and (max-width: 1470px){
+@media screen and (min-width: 350px) and (max-width: 1000px){
     .imgLogin{
         min-height: 0vh;
     }
@@ -60,7 +60,7 @@
     display: flex;
 }
 
-@media screen and (min-width: 350px) and (max-width: 480px){
+@media screen and (min-width: 350px) and (max-width: 1300px){
     .textoC{
         flex-direction: column;
     }
